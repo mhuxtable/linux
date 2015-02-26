@@ -26,16 +26,6 @@ config IRQ_WORK
 config BUILDTIME_EXTABLE_SORT
 	bool
 
-menu "RascalOS Extensions"
-
-config RASCALOS_TCP_PORT_ALLOCATOR_CONSENSUS
-	bool "TCP port allocator consensus"
-	default y
-	help
-	  Whether to perform consensus on the TCP port allocator.
-
-endmenu # "RascalOS Extensions"
-
 menu "General setup"
 
 config BROKEN

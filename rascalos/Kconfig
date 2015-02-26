@@ -1,0 +1,16 @@
+
+menuconfig RASCALOS
+	bool "RascalOS Extensions"
+	default n
+	help
+	  Enable consensus hooks, etc.
+
+if RASCALOS
+
+config RASCALOS_TCP_PORT_ALLOCATOR_CONSENSUS
+	bool "TCP port allocator consensus"
+	default y
+	help
+	  Whether to perform consensus on the TCP port allocator.
+
+endif
