@@ -24,6 +24,8 @@
 #include <net/tcp_states.h>
 #include <net/xfrm.h>
 
+#include <rascalos.h>
+
 #ifdef INET_CSK_DEBUG
 const char inet_csk_timer_bug_msg[] = "inet_csk BUG: unknown timer value\n";
 EXPORT_SYMBOL(inet_csk_timer_bug_msg);
@@ -228,7 +230,7 @@ success:
 	if (!inet_csk(sk)->icsk_bind_hash)
 		inet_bind_hash(sk, tb, snum);
 #ifdef CONFIG_RASCALOS_TCP_PORT_ALLOCATOR_CONSENSUS
-	printk(KERN_DEBUG "We're going to fail for testing, because you switched on Rascal's port allocator consensus.");
+	rascalos_call_consensus();
 #endif
 	WARN_ON(inet_csk(sk)->icsk_bind_hash != tb);
 	ret = 0;
